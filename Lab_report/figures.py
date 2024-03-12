@@ -24,7 +24,6 @@ bin_centers = 0.5 * (bin_edges[1:] + bin_edges[:-1])
 plt.xlabel("Count")
 plt.ylabel("frequency")
 plt.title("Counts in a 3s interval")
-plt.savefig('histogram.svg')
 
 mean_raw = np.mean(array_new)
 print(mean_raw)
@@ -41,8 +40,7 @@ plt.plot(x,
 
 plt.legend()
 plt.show()
-
-
+plt.savefig('histogram.svg')
 
 print(cov_matrix)
 
