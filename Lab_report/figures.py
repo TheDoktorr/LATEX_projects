@@ -1,15 +1,23 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.optimize as opt
+from scipy.optimize import curve_fit
+from scipy.stats import poisson
 
-#   array_binned = np.array([[0,1,2,3,4,5,6,7,8],[1,14,25,18,20,11,6,4,1]])
-#   np.savetxt("binned_data.csv", array_binned, delimiter=",")
-
-array_new = np.loadtxt('bg_raw_3.prn')
+array_new = np.loadtxt('bg_raw.prn')
 print(array_new)
 
-plt.hist(array_new)
+plt.figure(figsize=(10,10))
+plt.hist(array_new, range=(0,8), bins=9)
 plt.xlabel("Count")
 plt.ylabel("frequency")
 plt.title("Counts in a 3s interval")
-plt.show()
+# plt.savefig('plain_hist.svg') ->> run every so often
+# plt.show()
+
+mean_raw = np.mean(array_new)
+print(mean_raw)
+
+def fit_func(k, lamb):
+    return poisson.pmf(k, lamb)
+parameters, cov_matrix = curve_fit(fit_func)
