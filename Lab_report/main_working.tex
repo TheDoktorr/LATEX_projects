@@ -9,7 +9,9 @@
     \usepackage{hyperref}
     \usepackage{url}
     \usepackage[version=3]{mhchem}
-
+    \usepackage{svg}
+    \usepackage[raggedright]{sidecap}
+    \usepackage[margin=1in]{geometry}
 
 
     \begin{document}
@@ -20,20 +22,47 @@
     \maketitle
 
     \begin{abstract}
-    Radioactive sources decay randomly over time, with a fixed probability. The half life describes the time taken for a sample to halve its count rate. The count rates over a short period of time can also be modelled by statistical distributions, most commonly Poisson, in order to model the spread of decays and calculate the Poisson standard deviation from this. The exact values of standard dev. and count rate for our source, U-238, were used to test the Poisson's fit and determine the 2 values of standard deviation. Here it was shown a count rate $ R = 1.08 \pm 0.06$ Bq and $\sigma_{hist} = 1.71$. Our Poisson parameter was $m = 1.80$. This is very close to our standard deviation within the histogram, suggesting a good fit to the data, as well as the decay of U-238 being confirmed to be random, as expected. This is reflective of with the general accepted model of radioactive decays, which appear random over single time intervals, however can be modelled by a distribution when investigated over many repeated intervals. 
+    Radioactive sources decay randomly over time, with a fixed probability. The half life describes the time taken for a sample to halve its count rate. The count rates over a short period of time can be modelled by statistical distributions, most commonly Poisson, in order to model the spread of decays and calculate the Poisson standard deviation from this. The exact values of standard dev. and count rate for our source, U-238, were used to test the Poisson's fit and determine the 2 values of standard deviation. Here it was shown a count rate $ R = 1.08 \pm 0.06$ Bq and $\sigma_{hist} = 1.71$. Our Poisson parameter was $m = 1.80$. This is close to our standard deviation within the histogram, suggesting a good fit to the data, suggesting the beta decay of U-238 is random. This is reflective of with the general accepted model of radioactive decays, which appear random over single time intervals, and use of random distributions such as Poisson can model this data over a set interval. 
     \end{abstract}
 
     \section{Introduction}
     % general background
-    Unstable elements under go radioactive decay over their lifetime in order to reach stability. This occurs through 3 types of decay, alpha, beta and gamma, represented by their Greek alphabet symbols, $\alpha,\  \beta,\ \gamma$ and describe emission of \ce{^{4}_{2}He}, \ce{^{0}_{-1}e}, and Gamma waves respectively from the nucleus of the unstable element, with a combination of these decays until a stable state is reached. These decays can occur over a long period of time, and to measure and compare this we investigate an elements half life of decay, which describes the time it takes for the count rate, $R$ of a substance to fall to half its initial value.
+    Unstable elements undergo radioactive decay over their lifetime in order to reach stability. This occurs through 3 types of decay, alpha, beta and gamma, represented by their Greek alphabet symbols, $\alpha,\  \beta,\ \gamma$, and these describe emission of \ce{^{4}_{2}He}, \ce{^{0}_{-1}e}, and Gamma waves respectively from the nucleus of the unstable element, with a combination of these decays until a stable state is reached. These decays can occur over a long period of time, and to measure and compare this we investigate an elements half life of decay, which describes the time it takes for the count rate, $R$ of a substance to fall to half its initial value.
     % specific background 
-    These decays are random within an arbitrary short time period, and as half lives are often very long (often measured in years) they are hard to accurately measure. Instead, the probability of decay can be modelled from several repeated smaller time periods. This can be modelled statistically to determine the averages specific to that element's decay. Statistical models such as Poisson are especially effective as they describe a rate probability and have a flexible distribution that can be fit to a spread of data, making it the ideal choice to test for the count rate of a substance in a small time period. 
+    These decays are random within an arbitrary short time period due to the fixed probability of decay and as half lives are often very long (regularly measured in years) they are hard to accurately measure. Instead, the probability of decay can be modelled from several repeated smaller time periods. This can be modelled statistically to determine the averages specific to that element's decay. Statistical models such as Poisson are especially effective as they describe a rate probability and have a flexible distribution that can be fit to a spread of data, making it the ideal choice to test for the count rate of a substance in a small time period. 
     
     % knowledge gap
+    This experiment aimed to investigate the random nature of beta decay, and test how it can be modelled by a Poisson distribution, equating the means and calculating the respective standard deviations. The difference between these as well as the overall shape of the distribution provide quantitative and qualitative analysis on the goodness of fit of the Poisson in this case. This is further extended with the inclusion of Chi squared goodness of fit tests, to determine whether the fit is statistically significant. 
     % here we show
+    Here it was shown a count rate $ R = 1.08 \pm 0.06$ Bq and $\sigma_{hist} = 1.71$. Our Poisson parameter was $m = 1.80$. Our Chi squared value was -- suggesting the model is a -- fit for our data. These standard deviations are close together suggesting the model is a good fit however ...
+    
 
     
     \section{background/Theory}
+    % half life equation
+    The concept of half life is only briefly discussed in this report, however it can be helpful to have a basic understanding of the concept. The half life is defined as,
+    \begin{equation}
+        t_{\frac{1}{2}} = \frac{\ln{2}}{\lambda}
+    \end{equation}
+    Where $ t_{\frac{1}{2}}$ is the time for the number of particles to fall to half of it's original value, and $\lambda$ is the decay constant, the probability per decay. This relationship can be obtained from treating the decay as exponential, 
+    $$N = N_0 e^{-\lambda t}$$
+    for $N$ the number of particles and the $t$ time with $\lambda$ as above. 
+    % chemical process of radioactive decay
+   \\
+   These elements are in a initial state of instability, and they decay to a more stable state. Depending on the nature of the instability and the structure of the atomic nuclei depends on the type of the decay. For example, elements with a larger number of neutrons compared to protons generally decay via $\beta^{-}$ decay, hence a neutron will decay into a proton with the release of an electron and electron antineutrino. 
+   \\
+   The decay we are studying is the $\beta^{-}$ decay of \ce{^{238}U}. ...
+   \\
+    % poisson
+    The Poisson distribution will be used to model our data. The defining equation for the distribution is, 
+    \begin{equation}
+        P(N) = \frac{e^{-m}m^{n}}{N!}
+    \end{equation}
+    Where $P$ is the probability of obtaining $N$ counts, and $m$ is the mean.
+    As the Poisson is a random variable distribution, the mean, $m$ and standard deviation $\sigma_{Poisson}$ is defined by,
+    \begin{equation}
+        \sigma = \sqrt{m}
+    \end{equation}
     \section{Experimental method/theoretical approach}
     \section{Results and analysis/discussion}
     \section{Conclusions}
