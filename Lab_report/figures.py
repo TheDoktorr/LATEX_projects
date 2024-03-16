@@ -39,8 +39,9 @@ plt.plot(x,
 )
 
 plt.legend()
+plt.savefig('histogram_new.svg')
 plt.show()
-plt.savefig('histogram.svg')
+
 
 print(cov_matrix)
 
