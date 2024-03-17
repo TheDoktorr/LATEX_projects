@@ -51,7 +51,7 @@
    \\
    These elements are in a initial state of instability, and they decay to a more stable state. Depending on the nature of the instability and the structure of the atomic nuclei depends on the type of the decay. For example, elements with a larger number of neutrons compared to protons generally decay via $\beta^{-}$ decay, hence a neutron will decay into a proton with the release of an electron and electron antineutrino. 
    \\
-   The decay we are studying is the $\beta^{-}$ decay of \ce{^{238}U}. ...
+   The decay we are studying is the $\beta^{-}$ decay of \ce{^{238}U}. This has an approximate half life of $4 x 10^9$ years REF. Why is this a beta emitter?
    \\
     % poisson
     The Poisson distribution will be used to model our data. The defining equation for the distribution is, 
@@ -63,7 +63,13 @@
     \begin{equation}
         \sigma = \sqrt{m}
     \end{equation}
-    \section{Experimental method/theoretical approach}
+    We will use this to compare against the mean of the raw data according to the histogram. This is computed as the main of the whole data array. 
+    \section{Experimental method}
+    In order to take readings of the radioactive source the background count had to be measured first. To do this, the number of events were measured by a digital counter, connected  up to a Geiger-Muller tube, in an interval of 100 seconds. This allows us to calculate our background count per second, or count rate, in Bequerel (Bq). 
+    \newline
+    In order to test the random fluctuations, the \ce{^{238}U} source was carefully placed at a distance from the Geiger-Muller tube such that the count rate would be $<$10 for any 3 second interval. Due to the predicted nature of the counts in 3s, this doesn't need to be extensively measured as probability for these counts quickly falls to a very small value for a sensible distance from the source. Care should always be taken when handling radioactive sources. 
+    \newline
+    The count rate in 3s was then measured 100 times, ensuring the timer and counter was reset each measurement and the source was kept at uniform distance from the detector. This distance wasn't recorded in this experiment however in future it may be useful to compare these distances and their respective distributions. 
     \section{Results and analysis/discussion}
     \section{Conclusions}
     \section{References}
