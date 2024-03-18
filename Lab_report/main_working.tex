@@ -70,10 +70,13 @@
 
    % \centering
    % \scalebox{0.5}
-    \begin{figure}
-    \centering
-    \def\svgwidth{\columnwidth}
-    \includesvg{final_diag.svg}
+    \begin{figure}[ht]
+        \begin{center}
+            \def\svgwidth{\columnwidth}
+            \includesvg[height=8.0cm]{final_diag.svg}
+             \caption{“Figure 1 illustrates .”}
+             \label{fig:experimental setup}
+        \end{center}
     \end{figure}
 
     In order to take readings of the radioactive source the background count had to be measured first. To do this, the number of events were measured by a digital counter, connected  up to a Geiger-Müller tube, in an interval of 100 seconds. This allows us to calculate our background count per second, or count rate, in Becquerel (Bq). 
@@ -84,7 +87,14 @@
     \newline 
     
     \section{Results and analysis/discussion}
-    
+       \begin{figure}[ht]
+        \begin{center}
+            \def\svgwidth{\columnwidth}
+            \includesvg[height=8.0cm]{plain_hist.svg}
+             \caption{“Figure 2 illustrates .”}
+             \label{fig:experimental results 1}
+        \end{center}
+    \end{figure}
     \section{Conclusions}
     \section{References}
     \section{Appendices}
