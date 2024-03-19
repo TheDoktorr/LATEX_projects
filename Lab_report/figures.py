@@ -51,8 +51,8 @@ beans = spl(xnew)
 
 color ='tab:red'
 ax2.set_ylabel('probability', color=color)
-ax2.plot(x, fit_func(x, *parameters), marker='o', label='fit', color = color)
-ax2.plot(xnew, beans, marker=',', label='fit', color = 'orange')
+# ax2.plot(x, fit_func(x, *parameters), marker='o', label='fit', color = color)
+ax2.plot(xnew, beans, marker=',', label='fit', color = color)
 ax2.tick_params(axis='y', labelcolor = color)
 
 # mean_raw = np.mean(array_new)
