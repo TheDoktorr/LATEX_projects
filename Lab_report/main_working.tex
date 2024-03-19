@@ -53,6 +53,10 @@
    \\
 % The decay we are studying is the $\beta^{-}$ decay of \ce{^{238}U}. This has an approximate half life of $4 x 10^9$ years REF. Why is this a beta emitter?
    \\
+   In order to calculate the count rate, $R$, 
+   \begin{equation} R = \frac{N}{T}
+   \end{equation}
+   Where $R$ is the count rate, $T$ is the total time interval, $N$ is the total counts. This follows fairly intuitively from the definition. 
     % poisson
     The Poisson distribution will be used to model our data. The defining equation for the distribution is, 
     \begin{equation}
@@ -87,18 +91,24 @@
     \newline 
     
     \section{Results and analysis/discussion}
-    We took the software calculated mean of our data, $3.25$,
+    The data was plotted on a histogram (fig. 2) with integer bins, and error bars calculated based on the square root of the individual bin frequencies. This is due to the random error in decay measurements. 
+    \newline
+    To analyse the data, the software calculated mean of our data, $3.25$, and using equation (4), the histogram's standard deviation was calculated, $\sigma_{hist} = 1.8 (2.sf.)$. Following this, SciPy's Poisson and fit functions were used to fit a Poisson curve (based on eq.3) on top of the histogram. This gave a Poisson curve, mean ===, and by eq. 4, standard deviation, $\sigma_{Poisson}$ and the curve was then smoothed from Poisson's integer inputs. 
+    It can be estimate qualitatively that the curve fits fairly well to the overall shape, however further investigation of the Poisson parameter compared to the histogram mean reveals, 
        \begin{figure}[]
         \begin{center}
             \def\svgwidth{\columnwidth}
             \includesvg[height=8.0cm]{histogram_new.svg}
-             \caption{“Figure 2 illustrates .”}
+             \caption{“Figure 2 illustrates the Poisson curve, fit ontop of the histogram with associated error bars. The Possion's parameter was calculated as, and $\sigma_{hist} = $”}
              \label{fig:experimental results 1}
         \end{center}
     \end{figure}
     \section{Conclusions}
     \section{References}
     \section{Appendices}
+    Calculating $R$, $$ R = \frac{N}{T} \pm \frac{\sqrt{N}}{T}$$
+    Where $R$ is the count rate, $T$ is the total time interval, $N$ is the total counts. With values $N =( 32.5 \pm 2) * 10^{1}$, $T= 3 * 100 [s]$, gives 
+    $$R = 1.08 \pm 0.06$$ Bq
     \begin{table}[b]
         \centering
         \begin{tabular}{|c|c|}
