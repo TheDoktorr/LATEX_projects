@@ -20,7 +20,6 @@ x = np.arange(0, 10)
 plt.xticks(np.arange(min(x), max(x)+1, 1.0))
 
 bins = np.arange(10) - 0.5
-
 color = 'tab:blue'
 ax1.set_xlabel('Count')
 ax1.set_ylabel('frequency', color=color)
@@ -52,7 +51,7 @@ ax2.tick_params(axis='y', labelcolor = color)
 #)
 
 
-fig.legend()
+fig.legend(bbox_to_anchor=(0.88,0.97))
 fig.tight_layout()
 fig.set_size_inches(10,10)
 plt.savefig('histogram_new.svg')
