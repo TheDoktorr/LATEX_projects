@@ -75,7 +75,7 @@ fig.set_size_inches(5,5)
 plt.savefig('histogram_new.svg')
 plt.show()
 
-
+print(parameters)
 print(cov_matrix)
 
 # https://stackoverflow.com/questions/25828184/fitting-to-poisson-histogram
