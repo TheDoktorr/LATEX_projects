@@ -44,7 +44,7 @@ parameters, cov_matrix = curve_fit(fit_func, bin_centers, entries)
 
 
 xnew = np.linspace(x.min(), x.max(), 300)
-print(x)
+ #print(x)
 spl = make_interp_spline(x, fit_func(x, *parameters), k=3)
 beans = spl(xnew)
 
