@@ -27,9 +27,9 @@
 
     \section{Introduction}
     % general background
-    Unstable elements undergo radioactive decay over their lifetime in order to reach stability. This occurs through 3 types of decay, alpha, beta and gamma, represented by their Greek alphabet symbols, $\alpha,\  \beta,\ \gamma$, and these describe emission of \ce{^{4}_{2}He}, \ce{^{0}_{-1}e}, and Gamma waves respectively from the nucleus of the unstable element, with a combination of these decays until a stable state is reached. These decays can occur over a long period of time, and to measure and compare this we investigate an elements half life of decay, which describes the time it takes for the count rate, $R$ of a substance to fall to half its initial value.
+    Unstable elements undergo radioactive decay over their lifetime in order to reach stability. This occurs through 3 types of decay, alpha, beta and gamma, represented by their Greek alphabet symbols, $\alpha,\  \beta,\ \gamma$, and these describe emission of \ce{^{4}_{2}He}, \ce{^{0}_{-1}e}, and Gamma waves respectively from the nucleus of the unstable element, with a combination of these decays until a stable state is reached. These decays can occur over a long period of time, and to measure and compare this we investigate an elements half life of decay, which describes the time it takes for the count rate, $R$, of a substance to fall to half its initial value.
     % specific background 
-    These decays are random within an arbitrary short time period due to the fixed probability of decay and as half lives are often very long (regularly measured in years) they are hard to accurately measure. Instead, the probability of decay can be modelled from several repeated smaller time periods. This can be modelled statistically to determine the averages specific to that element's decay. Statistical models such as Poisson are especially effective as they describe a rate probability and have a flexible distribution that can be fit to a spread of data, making it the ideal choice to test for the count rate of a substance in a small time period. 
+    These decays are random within an arbitrary short time period due to the fixed probability of decay, and as half lives are often very long (e.g. the half life of \ce{^{4}_{2}He} is $\cdots$ REF!! ) they are hard to accurately measure. Instead, the probability of decay can be modelled from several repeated smaller time periods. This can be modelled statistically to determine the averages specific to that element's decay. Statistical models such as Poisson are especially effective as they describe a discrete rate (here of decay) and have a flexible distribution that can be fit to a spread of data, making it the ideal choice to test for the count rate of a substance in a small time period. 
     
     % knowledge gap
     This experiment aimed to investigate the random nature of beta decay, and test how it can be modelled by a Poisson distribution, equating the means and calculating the respective standard deviations. The difference between these as well as the overall shape of the distribution provide quantitative and qualitative analysis on the goodness of fit of the Poisson in this case. This is further extended with the inclusion of Chi squared goodness of fit tests, to determine whether the fit is statistically significant. 
@@ -51,7 +51,7 @@
    \\
    These elements are in a initial state of instability, and they decay to a more stable state. Depending on the nature of the instability and the structure of the atomic nuclei depends on the type of the decay. For example, elements with a larger number of neutrons compared to protons generally decay via $\beta^{-}$ decay, hence a neutron will decay into a proton with the release of an electron and electron antineutrino. 
    \\
-   The decay we are studying is the $\beta^{-}$ decay of \ce{^{238}U}. This has an approximate half life of $4 x 10^9$ years REF. Why is this a beta emitter?
+% The decay we are studying is the $\beta^{-}$ decay of \ce{^{238}U}. This has an approximate half life of $4 x 10^9$ years REF. Why is this a beta emitter?
    \\
     % poisson
     The Poisson distribution will be used to model our data. The defining equation for the distribution is, 
@@ -74,20 +74,21 @@
         \begin{center}
             \def\svgwidth{\columnwidth}
             \includesvg[height=8.0cm]{final_diag.svg}
-             \caption{“Figure 1 illustrates .”}
+             \caption{“U-238 source placed with tweezers on blue holding tray, distance d from the Geiger-Müller tube which is connected to the shielded housing and electronic counter. This takes 100 * 3 s readings of counts from the $\beta$ decay of the source”}
              \label{fig:experimental setup}
         \end{center}
     \end{figure}
 
-    In order to take readings of the radioactive source the background count had to be measured first. To do this, the number of events were measured by a digital counter, connected  up to a Geiger-Müller tube, in an interval of 100 seconds. This allows us to calculate our background count per second, or count rate, in Becquerel (Bq). 
+    Before taking readings of the radioactive source, the background count was first measured. To do this, the number of decayed nuclei were measured by a digital counter, connected up to a Geiger-Müller tube, in an interval of 100 seconds. From this, the background counts per second, or count rate in Becquerel (Bq) was calculated. This can be later considered when working out the average count rate in our data. 
     \newline
-    In order to test the random fluctuations, the \ce{^{238}U} source was carefully placed at a distance from the Geiger-Müller tube such that the count rate would be $<$10 for any 3 second interval. Due to the predicted nature of the counts in 3s, this doesn't need to be extensively measured as probability for these counts quickly falls to a very small value for a sensible distance from the source. Care should always be taken when handling radioactive sources. 
+    In order to test the random fluctuations, the \ce{^{238}U} source was carefully placed at a distance from the Geiger-Müller tube such that the count rate would be $<$10 for any 3 second interval. In testing this was roughly 8cm. Due to the hypothesised nature of the counts in 3s, this doesn't need to be extensively measured as the probability for larger count rates falls quickly towards zero regardless of distance. Care should always be taken when handling radioactive sources. 
     \newline
-    The count rate in 3s was then measured 100 times, ensuring the timer and counter was reset each measurement and the source was kept at uniform distance from the detector. This distance wasn't accurately measured in this experiment, at around $8 cm$ however in future it may be useful to compare these distances and their respective distributions. 
+    The count rate in 3s was then measured 100 times, ensuring the timer and counter was reset each measurement and the source was kept at uniform distance from the detector. This was achieved by placing the source on one of the adjustable shelves in the protective housing; this ensured the source was shielded when working with it for longer time intervals, as well as providing a stand for the Geiger-Müller tube. The data was collected raw and processed accordingly by computer software. 
     \newline 
     
     \section{Results and analysis/discussion}
-       \begin{figure}[ht]
+    We took the software calculated mean of our data, $3.25$,
+       \begin{figure}[]
         \begin{center}
             \def\svgwidth{\columnwidth}
             \includesvg[height=8.0cm]{histogram_new.svg}
@@ -98,5 +99,24 @@
     \section{Conclusions}
     \section{References}
     \section{Appendices}
-    
+    \begin{table}[b]
+        \centering
+        \begin{tabular}{|c|c|}
+        \hline
+          \textbf{Count}  & \textbf{Frequency} \\
+          \hline
+           0  & 1 \\
+           1 & 14\\
+           2  & 25 \\
+           3  & 18 \\
+           4  & 20 \\
+           5  & 11 \\
+           6  & 6\\
+           7  & 4 \\
+           8  & 1 \\
+           \hline
+        \end{tabular}
+        \caption{Binned data}
+        \label{tab:my_label}
+    \end{table}
      \end{document}
