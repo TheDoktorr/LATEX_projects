@@ -71,7 +71,7 @@ ax2.tick_params(axis='y', labelcolor = color)
 
 fig.legend(bbox_to_anchor=(0.88,0.95))
 fig.tight_layout()
-fig.set_size_inches(10,10)
+fig.set_size_inches(5,5)
 plt.savefig('histogram_new.svg')
 plt.show()
 
