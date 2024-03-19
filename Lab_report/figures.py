@@ -39,6 +39,7 @@ plt.plot(x,
 )
 
 plt.legend()
+plt.tight_layout()
 plt.savefig('histogram_new.svg')
 plt.show()
 
