@@ -50,7 +50,7 @@ print(x.shape)
 print(height.shape)
 print(height)
 
-# ax1.errorbar(x,height,xerr=0, yerr=np.sqrt(height), fmt=' ')
+ax1.errorbar(bin_centers,height,xerr=0, yerr=np.sqrt(height), fmt='', linestyle="None", capsize=2)
 # print(bins)
 parameters, cov_matrix = curve_fit(fit_func, bin_centers, entries)
 print(parameters)
@@ -71,10 +71,10 @@ spl = make_interp_spline(x, fit_func(x, mu), k=3)
 beans = spl(xnew)
 
 
-res.plot()
+# res.plot()
 color ='tab:red'
 ax2.set_ylabel('probability', color=color)
-# ax2.plot(x, fit_func(x, *parameters), marker='o', label='fit', color = color)
+ax2.plot(x, fit_func(x, mu), marker='o', color = color, ls = '', ms = 4.0, )
 ax2.plot(xnew, beans, marker=',', label='fit', color = color)
 ax2.tick_params(axis='y', labelcolor = color)
 
@@ -93,14 +93,14 @@ ax2.tick_params(axis='y', labelcolor = color)
 #)
 
 
-# fig.legend(bbox_to_anchor=(0.88,0.95))
+fig.legend(bbox_to_anchor=(0.88,0.95))
 fig.tight_layout()
 fig.set_size_inches(5,5)
 plt.savefig('histogram_new.svg')
 plt.show()
 
-## print(parameters)
-## print(cov_matrix)
+print(parameters)
+print(cov_matrix)
 
 # https://stackoverflow.com/questions/25828184/fitting-to-poisson-histogram
 # https://stackoverflow.com/questions/5283649/plot-smooth-line-with-pyplot
