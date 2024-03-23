@@ -9,6 +9,8 @@ from scipy.interpolate import make_interp_spline, BSpline
 from scipy.stats import rv_discrete
 from scipy import stats
 from scipy.stats import fit
+from matplotlib.ticker import (AutoMinorLocator, MultipleLocator, FormatStrFormatter)
+
 
 class poisson_gen(rv_discrete):
     def _pmf(self, k, mu):
@@ -54,8 +56,8 @@ ax1.errorbar(bin_centers,height,xerr=0, yerr=np.sqrt(height), fmt='', linestyle=
 # print(bins)
 parameters, cov_matrix = curve_fit(fit_func, bin_centers, entries)
 print(parameters)
-
-
+ax1.yaxis.set_minor_locator(AutoMinorLocator(5))
+ax2.yaxis.set_minor_locator(AutoMinorLocator(5))
 # data = int(array_new)
 
 dist = stats.poisson
