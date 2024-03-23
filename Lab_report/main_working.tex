@@ -16,7 +16,7 @@
 
     \begin{document}
 
-    \title{Stastically modelling the random nature of beta decay in Urainium-238}
+    \title{Statistically modelling the random nature of beta decay in Uranium-238}
     \author{Andrew Hamill 39047415}
     \date{\today}
     \maketitle
@@ -38,7 +38,7 @@
     %further development needed
 
     
-    \section{background/Theory}
+    \section{background and Theory}
     % half life equation
     The concept of half life is only briefly discussed in this report, however it can be helpful to have a basic understanding of the concept. The half life relationship is defined as,
     \begin{equation}
@@ -46,15 +46,18 @@
     \end{equation}
     Where $ t_{\frac{1}{2}}$ is the time for the number of particles to fall to half of it's original value (or the associated count rate), and $\lambda$ is the decay constant: the probability per decay. This relationship can be obtained from treating the decay as exponential, 
     $$N = N_0 e^{-\lambda t}$$
-    for $N$ the number of particles and the $t$ time with $\lambda$ as above.  The $\lambda$ is the exponential coefficient of decay and thus is the probablity of decay. 
+    for $N$ the number of particles and the $t$ time with $\lambda$ as above.  The $\lambda$ is the exponential coefficient of decay and thus is the probability of decay. 
     % chemical process of radioactive decay
    \\
    These elements are in a initial state of instability, and they decay to a more stable state. The nature of the instability and the structure of the atomic nuclei determines the type of the decay. For example, elements with a larger number of neutrons compared to protons generally decay via $\beta^{-}$ decay, hence a neutron will decay into a proton with the release of an electron and electron antineutrino. 
    There are many types of fundamental decays, Alpha $\alpha$, Beta plus/minus $\beta^{-}/\beta^{+}$, Gamma, $\gamma$, as well as electron capture and instantaneous fission (REFFF) to name the most understood ones. This report only concerns $\beta^{-}$ decay, defined by the following equation,
-   u238 decay equation.
-   Where .. .. .. are the elements involved in the decay. This can also be analysed on a quark level, producing the follow quark equation:
+    $$ \ce{^{238}_{92}U} \longrightarrow \ce{^{234}_{90}Th} + \ce{^{4}_{2}\alpha} + \ce{^{0}_{0}\gamma}$$
+    \newline
+    $$\ce{^{234}_{90}Th} \longrightarrow \ce{^{234}_{91}Pa} + \ce{^{0}_{-1}\beta^{-}} + \ce{^{0}_{0}\bar{\nu_{e}}} $$
+   Where U is Uranium, Th is Thorium and Pa is Protactinium. Other particles release include the 3 decays mentioned above, as well as an electron antineutrino,$\ce{^{0}_{0}\bar{\nu_{e}}}$. Protactinium also further decays by $\beta$, however this equation is omitted here. This can also be analysed on a quark level, producing the follow quark equation:
  \newline
-   % $\ce{^{1}_{0}n} \longrightarrow  \ce{^{1}_{1}p} + \ce{{0}_{-1}e} + \ce{{0}_{0}\overline{\nu_{e}}$
+  $$ \ce{^{1}_{0}n} \longrightarrow \ce{^{1}_{1}p} + \ce{^{0}_{-1}e} + \ce{^{0}_{0}\bar{\nu_{e}}} $$
+\newline
 This describes the emission of an electron and how a neutron changes to a proton, taking an element with excess neutrons closer towards stability. This occurs through lots of decays over a large time period. 
    \\
 % The decay we are studying is the $\beta^{-}$ decay of \ce{^{238}U}. This has an approximate half life of $4 x 10^9$ years REF. Why is this a beta emitter?
@@ -140,23 +143,57 @@ This describes the emission of an electron and how a neutron changes to a proton
         \label{tab:my_label}
     \end{table}
     Poisson values 
+    $N = 60$, and $x$ is the counts in 100s. 
     \begin{table}[]
         \centering
-        \begin{tabular}{|c|c|}
-           counts (n)  & Poisson probability P(x=n) & $ f_{e}, P(x=n) * N$ & $f_{0}$ & \chi^{2} Contribution \\
-            0 & 0.0387742 & 3.87742 & 1
-            1 & 0.12601617 & 12.601617 & 14
-            2 & 0.20477628 & 20.477628 & 25
-            3 & 0.22184097 & 22.184097 & 18
-            4 & 0.18024579 & 18.024579 & 20
-            5 & 0.11715976 & 11.715976 & 11
-            6 & 0.06346154 & 6.346154 & 6 
-            7 & 0.02946428 & 2.946428 & 4
-            8 & 0.01196986 & 1.1996986 & 1
-            
+        \begin{tabular}{|c|c|c|c|}
+         \hline
+           counts (n)  & Poisson probability P(x=n) & $ f_{e}, P(x=n) * N$ & $f_{0}$ \\
+            \hline
+            0 & 0.0387742 & 3.87742 & 1 \\
+            1 & 0.12601617 & 12.601617 & 14\\
+            2 & 0.20477628 & 20.477628 & 25\\
+            3 & 0.22184097 & 22.184097 & 18\\
+            4 & 0.18024579 & 18.024579 & 20\\
+            5 & 0.11715976 & 11.715976 & 11\\
+            6 & 0.06346154 & 6.346154 & 6 \\
+            7 & 0.02946428 & 2.946428 & 4\\
+            8 & 0.01196986 & 1.1996986 & 1\\
+             \hline
 
         \end{tabular}
-        \caption{Caption}
+        \caption{Raw Poisson data for GoF}
         \label{tab:my_label}
     \end{table}
+    Following this, we combine frequencies less than 4 as they are too small for GoF. 
+    \begin{table}[]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|}
+         \hline
+           counts (n)  & Poisson probability P(x=n) & $ f_{e}, P(x=n) * N$ & $f_{0}$ & $\chi^{2}$ Contribution\\
+ \hline
+            <1 & 0.16479038 & 16.479038 & 15 &0.1327476401\\
+            2 & 0.20477628 & 20.477628 & 25&0.9987410899\\
+            3 & 0.22184097 & 22.184097 & 18&0.7891539469\\
+            4 & 0.18024579 & 18.024579 & 20&0.2164981566\\
+            5 & 0.11715976 & 11.715976 & 11&0.04375406988\\
+            6 & 0.06346154 & 6.346154 & 6 &0.01888113521\\
+            >7 & 0.04772526 & 4.772526 & 5 &0.01084214537\\      
+ \hline
+        \end{tabular}
+        \caption{Corrected Frequencies and Poisson Contributions}
+        \label{tab:my_label}
+    \end{table}
+    In order to calculate $\chi^{2}$, we firstly estimate the degrees of freedom, df. This dataset has 7 entries, and 1 estimated parameter, $m$ therefore, 
+    $$df = 7 - 1 - 1 = 5$$
+    We then use the equation for $\chi^{2}$, 
+    $$\chi^{2} = \sum{\frac{(f_{O}-f_{e})^{2}}{f_{e}}}$$
+    To generate a $\chi^{2} = 2.21061818$ and $p = 0.81930076$. Using the standard hypothesis,
+    \newline
+    $H_{0} =$ The Poisson is a good fit for the data
+    \newline
+    $H_{1} =$ The Poisson is not a good fit for the data
+    \newline
+    As our p value is >0.05, it is significant at the 
+    5 percent level, deeming it a good fit for our data. 
      \end{document}
