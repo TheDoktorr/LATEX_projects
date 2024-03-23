@@ -59,7 +59,7 @@ print(parameters)
 ax1.yaxis.set_minor_locator(AutoMinorLocator(5))
 ax2.yaxis.set_minor_locator(AutoMinorLocator(5))
 # data = int(array_new)
-
+# print
 dist = stats.poisson
 bounds = [(3, 4)]
 res = stats.fit(dist, array_new, bounds)
