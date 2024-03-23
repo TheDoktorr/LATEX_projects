@@ -38,25 +38,33 @@
     %further development needed
 
     
-    \section{background and Theory}
+    \section{Fundamentals of radioactive decay and Poisson modelling}
     % half life equation
     The concept of half life is only briefly discussed in this report, however it can be helpful to have a basic understanding of the concept. The half life relationship is defined as,
     \begin{equation}
         t_{\frac{1}{2}} = \frac{\ln{2}}{\lambda}
     \end{equation}
     Where $ t_{\frac{1}{2}}$ is the time for the number of particles to fall to half of it's original value (or the associated count rate), and $\lambda$ is the decay constant: the probability per decay. This relationship can be obtained from treating the decay as exponential, 
-    $$N = N_0 e^{-\lambda t}$$
+    \begin{equation}
+  N = N_0 e^{-\lambda t}
+    \end{equation}
     for $N$ the number of particles and the $t$ time with $\lambda$ as above.  The $\lambda$ is the exponential coefficient of decay and thus is the probability of decay. 
     % chemical process of radioactive decay
    \\
    These elements are in a initial state of instability, and they decay to a more stable state. The nature of the instability and the structure of the atomic nuclei determines the type of the decay. For example, elements with a larger number of neutrons compared to protons generally decay via $\beta^{-}$ decay, hence a neutron will decay into a proton with the release of an electron and electron antineutrino. 
    There are many types of fundamental decays, Alpha $\alpha$, Beta plus/minus $\beta^{-}/\beta^{+}$, Gamma, $\gamma$, as well as electron capture and instantaneous fission (REFFF) to name the most understood ones. This report only concerns $\beta^{-}$ decay, defined by the following equation,
-    $$ \ce{^{238}_{92}U} \longrightarrow \ce{^{234}_{90}Th} + \ce{^{4}_{2}\alpha} + \ce{^{0}_{0}\gamma}$$
+    \begin{equation}
+    \ce{^{238}_{92}U} \longrightarrow \ce{^{234}_{90}Th} + \ce{^{4}_{2}\alpha} + \ce{^{0}_{0}\gamma}
+\end{equation}
+\begin{equation}
+    \ce{^{234}_{90}Th} \longrightarrow \ce{^{234}_{91}Pa} + \ce{^{0}_{-1}\beta^{-}} + \ce{^{0}_{0}\bar{\nu_{e}}}
+\end{equation}
 
-    $$\ce{^{234}_{90}Th} \longrightarrow \ce{^{234}_{91}Pa} + \ce{^{0}_{-1}\beta^{-}} + \ce{^{0}_{0}\bar{\nu_{e}}} $$
+
    Where U is Uranium, Th is Thorium and Pa is Protactinium. Other particles release include the 3 decays mentioned above, as well as an electron antineutrino,$\ce{^{0}_{0}\bar{\nu_{e}}}$. Protactinium also further decays by $\beta$, however this equation is omitted here. This can also be analysed on a quark level, producing the follow quark equation:
  \newline
-  $$ \ce{^{1}_{0}n} \longrightarrow \ce{^{1}_{1}p} + \ce{^{0}_{-1}e} + \ce{^{0}_{0}\bar{\nu_{e}}} $$
+  \begin{equation} \ce{^{1}_{0}n} \longrightarrow \ce{^{1}_{1}p} + \ce{^{0}_{-1}e} + \ce{^{0}_{0}\bar{\nu_{e}}} 
+  \end{equation}
 \newline
 This describes the emission of an electron and how a neutron changes to a proton, taking an element with excess neutrons closer towards stability. This occurs through lots of decays over a large time period. 
    \\
@@ -78,7 +86,7 @@ This describes the emission of an electron and how a neutron changes to a proton
     \end{equation}
     We will use this to compare against the mean of the raw data according to the histogram. This is computed as the main of the whole data array. 
      \newline 
-    \section{Experimental method}
+    \section{Experimental determination of the radioactive source's activity}
 
 
    % \centering
@@ -87,22 +95,15 @@ This describes the emission of an electron and how a neutron changes to a proton
         \begin{center}
             \def\svgwidth{\columnwidth}
             \includesvg[height=8.0cm]{final_diag.svg}
-             \caption{“U-238 source placed with tweezers on blue holding tray, distance d from the Geiger-Müller tube which is connected to the shielded housing and electronic counter. This takes 100 * 3 s readings of counts from the $\beta$ decay of the source”}
+             \caption{A diagram of the experimental setup, in which a U-238 source is placed with tweezers on blue holding tray, set at distance d from the Geiger-Müller tube. This is connected to the shielded housing in order to ensure the distance d and angle relative to the source are held constant. This tube is connected to an electronic counter, used here to take  100 * 3 s readings of counts from the $\beta$ decay of the source.}
              \label{fig:experimental setup}
         \end{center}
     \end{figure}
 
-    Before taking readings of the radioactive source, the background count was first measured. To do this, the number of decayed nuclei were measured by a digital counter, connected up to a Geiger-Müller tube, in an interval of 100 seconds.
-    % why 100s?
-    
-    From this, the background counts per second, or count rate in Becquerel (Bq) was calculated. This can be later considered when working out the average count rate in our data. 
-    \newline
-    In order to test the random fluctuations, the \ce{^{238}U} source was carefully placed at a distance from the Geiger-Müller tube such that the count rate would be $<$10 for any 3 second interval. In testing this was roughly 8cm. Due to the hypothesised nature of the counts in 3s, this doesn't need to be extensively measured as the probability for larger count rates falls quickly towards zero regardless of distance. Care should always be taken when handling radioactive sources. 
-    \newline
-    The count rate in 3s was then measured 100 times, ensuring the timer and counter was reset each measurement and the source was kept at uniform distance from the detector. This was achieved by placing the source on one of the adjustable shelves in the protective housing, which ensured the source was shielded when working with it for longer time intervals, as well as providing a stand for the Geiger-Müller tube. The data was collected raw and processed accordingly by computer software. 
-    \newline 
-    
-    \section{Results and analysis/discussion}
+    Before taking readings of the radioactive source, any present background radiation had to be considered. Though the source was placed in a somewhat shielded housing (see Figure 1), sources of background radiation are present everywhere and so a flat background count rate is first established before introducing more potent sources. To do this, the source was kept in a lead lined storage container, at a significant distance from a Geiger-Müller tube, connected normal to a shielded housing that will hold the source. This detector is then connected to an electric counter, responsible for counting the number of electric pulses received in a set time interval. To measure the background count, the number of decayed nuclei was measured in an interval of 100 seconds. The background activity, or counts per second in Bequerel (Bq) could then calculated using the relationship given in Equation 6. The time interval of 100 seconds was chosen as it is significantly larger than the interval used to investigate random decay from our source, as well as being a convenient number for calculation purposes. This will be subtracted from our count rate after taking readings from the source, to eliminate the effect of background radiation on our measurements. \newline
+    In order to test the random fluctuations, the \ce{^{238}U} source was carefully placed at a distance from the Geiger-Müller tube such that the count rate would be $<$10 for any 3 second interval. This ensures the conditions for a Poisson model are best met, namely that events are "rare" within the time interval, in effect ensuring they are discrete and countable, as well as each decay being independent. In testing this was roughly 8cm. As the probability for larger count rates falls quickly towards zero for increasing distances, and the Poisson conditions must be valid for our model to produce a good fit, this distance wasn't varied much. If our Poisson fit poorly this could be further investigated.  \\
+    The count rate in 3s intervals was then measured 100 times, ensuring the timer and counter was reset each measurement and the source was kept at uniform distance and angle from the detector. This was achieved by placing the source on one of the adjustable shelves in the protective housing, which ensured the source was shielded when working with it for longer time periods, as well as providing a stand for the Geiger-Müller tube to ensure this didn't move. The data was collected raw and processed accordingly by computer software. This data was collected all at once, ensuring little changes to background environment within our control. 
+    \section{Analysis of decay parameters and fitting the statistical model}
     The data was plotted on a histogram (fig. 2) with integer bins, and error bars calculated based on the square root of the individual bin frequencies. This is due to the random error in decay measurements. 
     \newline
     To analyse the data, the software calculated mean of our data, $3.25$, and using equation (4), the histogram's standard deviation was calculated, $\sigma_{hist} = 1.8 (2.sf.)$. Following this, SciPy's Poisson and fit functions were used to fit a Poisson curve (based on eq.3) on top of the histogram. This gave a Poisson curve, mean ===, and by eq. 4, standard deviation, $\sigma_{Poisson}$ and the curve was then smoothed from Poisson's integer inputs. 
@@ -111,7 +112,7 @@ This describes the emission of an electron and how a neutron changes to a proton
         \begin{center}
             \def\svgwidth{\columnwidth}
             \includesvg[height=8.0cm]{histogram_new.svg}
-             \caption{“Figure 2 illustrates the Poisson curve, fit ontop of the histogram with associated error bars. The Possion's parameter was calculated as, and $\sigma_{hist} = $”}
+             \caption{“Figure 2 illustrates the Poisson curve, fit on top of the histogram with associated error bars. The Possion's parameter was calculated as, and $\sigma_{hist} = $”}
              \label{fig:experimental results 1}
         \end{center}
     \end{figure}
