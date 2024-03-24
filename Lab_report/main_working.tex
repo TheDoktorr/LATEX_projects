@@ -104,15 +104,18 @@ This describes the emission of an electron and how a neutron changes to a proton
     In order to test the random fluctuations, the \ce{^{238}U} source was carefully placed at a distance from the Geiger-Müller tube such that the count rate would be $<$10 for any 3 second interval. This ensures the conditions for a Poisson model are best met, namely that events are "rare" within the time interval, in effect ensuring they are discrete and countable, as well as each decay being independent. In testing this was roughly 8cm. As the probability for larger count rates falls quickly towards zero for increasing distances, and the Poisson conditions must be valid for our model to produce a good fit, this distance wasn't varied much. If our Poisson fit poorly this could be further investigated.  \\
     The count rate in 3s intervals was then measured 100 times, ensuring the timer and counter was reset each measurement and the source was kept at uniform distance and angle from the detector. This was achieved by placing the source on one of the adjustable shelves in the protective housing, which ensured the source was shielded when working with it for longer time periods, as well as providing a stand for the Geiger-Müller tube to ensure this didn't move. The data was collected raw and processed accordingly by computer software. This data was collected all at once, ensuring little changes to background environment within our control. 
     \section{Analysis of decay parameters and fitting the statistical model}
-    The data was plotted on a histogram (fig. 2) with integer bins, and error bars calculated based on the square root of the individual bin frequencies. This is due to the random error in decay measurements. 
+    The data was plotted on a histogram (fig. 2) with integer bins, and error bars calculated based on the square root of the individual bin frequencies as this is the error in random variables.  The overall shape is positively skewed around a mean approximated to be between 3 and 4.
     \newline
-    To analyse the data, the software calculated mean of our data, $3.25$, and using equation (4), the histogram's standard deviation was calculated, $\sigma_{hist} = 1.8 (2.sf.)$. Following this, SciPy's Poisson and fit functions were used to fit a Poisson curve (based on eq.3) on top of the histogram. This gave a Poisson curve, mean ===, and by eq. 4, standard deviation, $\sigma_{Poisson}$ and the curve was then smoothed from Poisson's integer inputs. 
+    To further analyse the data, the software calculated mean of our data, $3.25$, and using Equation 4, which describes the relationship between mean and standard deviation of a random variable, we calculated  $\sigma_{data} = 1.8$  (2.sf.).  We also considered the  Following this, SciPy's Poisson and fit functions were used to fit a Poisson curve (Equation 7) on top of the histogram. This gave a Poisson curve, mean ===, and by eq. 4, standard deviation, $\sigma_{Poisson}$ and the curve was then smoothed from Poisson's integer inputs. 
+
+    Figure 2 shows the histogram with bin centres as the integers associated with each reading, rather than the convention of a bin starting and ending at each integer. This was a necessary compromise due to the Poisson equation (Equation 7) requiring integer inputs, and the curve was fit to the centres of the bins, in order to better approximate the distribution shape. 
+    
     It can be estimated qualitatively that the curve fits fairly well to the overall shape, however further investigation of the Poisson parameter compared to the histogram mean reveals, 
        \begin{figure}[]
         \begin{center}
             \def\svgwidth{\columnwidth}
             \includesvg[height=8.0cm]{histogram_new.svg}
-             \caption{“Figure 2 illustrates the Poisson curve, fit on top of the histogram with associated error bars. The Possion's parameter was calculated as, and $\sigma_{hist} = $”}
+             \caption{“Figure 2 illustrates the Poisson curve, fit on top of the histogram with associated error bars. The Poisson's parameter was calculated as, and $\sigma_{hist} = $”}
              \label{fig:experimental results 1}
         \end{center}
     \end{figure}
