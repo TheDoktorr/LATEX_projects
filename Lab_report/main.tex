@@ -12,111 +12,105 @@
     \usepackage{svg}
     \usepackage[raggedright]{sidecap}
     \usepackage[margin=1in]{geometry}
-
+\geometry{
+ a4paper,
+ left=2.54cm,
+ right=2.54cm,
+ bottom=2.54cm,
+ top=2.54cm, 
+ headsep=0.1cm,
+ }
 
     \begin{document}
 
-    \title{Statistically modelling the random nature of beta decay in Uranium-238}
+\title{\vspace{-1cm}Statistically modelling the random nature of beta decay in Uranium-238}
     \author{Andrew Hamill 39047415}
     \date{\today}
     \maketitle
-
-    \begin{abstract}
-    \normalsize Radioactive sources decay randomly over time, with a fixed probability. The half life describes the time taken for a sample to halve its count rate (\cite{YF}). The count rates over a short period of time can be modelled by statistical distributions, most commonly Poisson, in order to model the spread of decays and calculate the respective standard deviation from this. The experimentally obtained values of standard deviation and count rate for the source, U-238, were used to test a Poisson fit and compare the two values of standard deviation. Here it was shown $\sigma_{data} = 1.71$ (3 sf.). Based on the model of random error and the estimated Poisson parameter, it was shown that $\sigma{Po.2} = 1.80$ (3 sf.). These two values of standard deviation are significantly close, suggesting a good fit to the experimental data, which was confirmed by a $\chi^{2}$ Goodness of Fit test. Thus it was concluded that beta decay of U-238 is random and can be successfully modelled by a Poisson distribution. This is reflective of the generally accepted model of radioactive decays (\cite{YF}), which appear random over single time intervals.  
-    \end{abstract}
-
+    \section{abstract}
+Radioactive sources decay randomly over time, with a fixed probability. The half life describes the time taken for a sample to halve its count rate (\cite{YF}). The count rate over a short period of time can be modelled by statistical distributions, most commonly Poisson, in order to model the spread of decays and calculate the respective standard deviation from this. The experimentally obtained values of standard deviation and count rate for the source, U-238, were used to test a Poisson fit and compare the two values of standard deviation. Here it was shown $\sigma_{data} = 1.71$ (3 sf.). Based on the model of random error and the estimated Poisson parameter, it was shown that $\sigma{Po.2} = 1.80$ (3 sf.).
+     
+\noindent These two values of standard deviation are significantly close, suggesting a good fit to the experimental data, which was confirmed by a $\chi^{2}$ Goodness of Fit test. Thus it was concluded that beta decay of U-238 is random and can be successfully modelled by a Poisson distribution. This is reflective of the generally accepted model of radioactive decays (\cite{YF}), which appear random over single time intervals.  
     \section{Introduction}
     % general background
-    Unstable elements undergo radioactive decay over their lifetime in order to reach stability. This occurs through 3 main types of decay, alpha, beta and gamma, represented by their Greek alphabet symbols, $\alpha,\  \beta,\ \gamma$.  These describe emission of \ce{^{4}_{2}He}, \ce{^{0}_{-1}e}, and \ce{^{0}_{0}\gamma} respectively from the nucleus of the unstable element, with a sequential combination of these decays present until a stable state is reached. The decay of these elements can occur over a long period of time, and to measure and compare this the half life of an element is investigated. This describes the time it takes for the count rate, $R$, of a substance to fall to half its initial value (\cite{Magill2005}). This is unique to the element and its decay.
+Unstable elements undergo radioactive decay over their lifetime in order to reach stability. This occurs through 3 main types of decay, alpha, beta and gamma, represented by their Greek alphabet symbols, $\alpha,\  \beta,\ \gamma$.  These describe emission of \ce{^{4}_{2}He}, \ce{^{0}_{-1}e}, and \ce{^{0}_{0}\gamma} respectively from the nucleus of the unstable element, with a sequential combination of these decays present until a stable state is reached. The decay of these elements can occur over a long period of time, and to measure and compare this the half life of an element is investigated. This describes the time it takes for the count rate, $R$, of a substance to fall to half its initial value (\cite{Magill2005}). This is unique to the element and its decay.
     % specific background 
-    These decays are random within an arbitrary short time period as a result of the fixed probability of decay. The half life of an elemnt can be hard to accurately measure due to their significant length, for example, the half life of \ce{^{238}_{}U} is (4.4683 ± 0.0096) Ga (\cite{U238}).  It can be achieved from taking readings over several time periods, and solving the equations for exponential decay; however the resolution of this method suffers in insufficiently long time periods. Instead, the probability of decay can be modelled from several repeated smaller time periods. This can be modelled statistically to determine the  specific parameters of an element's decay. Statistical models such as Poisson are especially effective as they describe a discrete rate (in this case, decay) and have a flexible distribution that can be fit to a spread of data, making it ideal to model the random nature of radioactive decay in a small time period. 
     
-    % knowledge gap
-    This experiment aimed to investigate the random nature of beta decay, specifically for elements with a substantial half life. Following this, the aim was to test how it can be modelled by a Poisson distribution and how the Poisson's parameters compared to the statistics of the raw experimental data. The difference between them, as well as the overall shape of the modelled distribution, provide quantitative and qualitative analysis on the Goodness of Fit of the Poisson in this case. This is further extended with the inclusion of a Chi squared Goodness of Fit test, to determine whether the fit is statistically significant.  We further analysed the background count and activity to determine the contribution of background radiation to our data. 
-    % here we show
-    Here it was shown $\sigma_{data} = 1.71$ (3 sf.) and $\sigma_{Po.2} = 1.80$ (3 sf.) from our experimental data. Our experimental result was within five percent of the model and so it was deemed this a good model for our data. Additionally, the Chi squared value $p = 0.820$ (3 sf.) suggests the model is an appropriate fit for our data. Experimental standard deviation is also within five percent of our model before considering sources of error, suggesting the model is a good fit to our data. 
-    %further development needed
-    Additionally the experiment helped understanding of data modelling, specifically understanding the conditions for which statistical models can be used as well as their shortcomings. This helps plan future work in order to minimise error and ensure approximations do not tarnish the quality of experimental data collected.
-
+\noindent These decays are random within an arbitrary short time period as a result of the fixed probability of decay. The half life of an element can be hard to accurately measure due to their significant length, for example, the half life of \ce{^{238}_{}U} is (4.4683 ± 0.0096) Ga (\cite{U238}).  It can be achieved from taking readings over several time periods, and solving the equations for exponential decay; however the resolution of this method suffers in insufficiently long time periods. Instead, the probability of decay can be modelled from several repeated smaller time periods. This can be modelled statistically to determine the  specific parameters of an element's decay. Statistical models such as Poisson are especially effective as they describe a discrete rate (in this case, decay) and have a flexible distribution that can be fit to a spread of data, making it ideal to model the random nature of radioactive decay in a small time period. 
     
+\noindent This experiment aimed to investigate the random nature of beta decay, specifically for elements with a substantial half life. Following this, the aim was to test how it can be modelled by a Poisson distribution and how the Poisson's parameters compared to the statistics of the raw experimental data. The difference between them, as well as the overall shape of the modelled distribution, provide quantitative and qualitative analysis on the Goodness of Fit of the Poisson in this case. This is further extended with the inclusion of a Chi squared Goodness of Fit test, to determine whether the fit is statistically significant.  We further analysed the background count and activity to determine the contribution of background radiation to our data. 
+    
+\noindent Here it was shown $\sigma_{data} = 1.71$ (3 sf.) and $\sigma_{Po.2} = 1.80$ (3 sf.) from our experimental data. Our experimental result was within five percent of the model and so it was deemed this a good model for our data. Additionally, the Chi squared value $p = 0.820$ (3 sf.) suggests the model is an appropriate fit for our data. Experimental standard deviation is also within five percent of our model before considering sources of error, suggesting the model is a good fit to our data. 
+    
+\noindent Additionally the experiment helped understanding of data modelling, specifically understanding the conditions for which statistical models can be used as well as their shortcomings. This helps plan future work in order to minimise error and ensure approximations do not tarnish the quality of experimental data collected.  
     \section{Fundamentals of radioactive decay and Poisson modelling}
-    % half life equation
-    The concept of half life is only briefly discussed in this report, however it can be helpful to have a basic understanding of the concept. The half life relationship is defined as,
-    \begin{equation}
+Though only mentioned briefly, the half life relationship is defined as,
+\begin{equation}
         t_{\frac{1}{2}} = \frac{\ln{2}}{\lambda}
     \end{equation}
-    Where $ t_{\frac{1}{2}}$ is the time for the number of particles to fall to half of its original value (or the associated count rate), and $\lambda$ is the decay constant: the probability per decay. This relationship can be obtained from treating the decay as exponential, 
+where $ t_{\frac{1}{2}}$ is the time for the number of particles to fall to half of its original value (or the count rate), and $\lambda$ is the decay constant: the probability per decay. \\
+These elements are in an initial state of instability, and they decay to a more stable state. The nature of the instability and the structure of the atomic nuclei determines the type of the decay. For example, elements with a larger number of neutrons compared to protons generally decay via $\beta^{-}$ decay, hence a neutron will decay into a proton with the release of an electron and electron antineutrino. \\
+There are many types of fundamental decays, Alpha $\alpha$, Beta plus/minus $\beta^{-}/\beta^{+}$, Gamma, $\gamma$, as well as electron capture and instantaneous fission (\cite{Magill2005}) to name the most understood ones. This report is only concerned with $\beta^{-}$ decay, defined by the following equation,
     \begin{equation}
-  N = N_0 e^{-\lambda t}
-    \end{equation}
-    for $N$ the number of particles and the $t$ time with $\lambda$ as above.  The $\lambda$ is the exponential coefficient of decay and thus is the probability of decay. 
-    % chemical process of radioactive decay
-   \\
-   These elements are in an initial state of instability, and they decay to a more stable state. The nature of the instability and the structure of the atomic nuclei determines the type of the decay. For example, elements with a larger number of neutrons compared to protons generally decay via $\beta^{-}$ decay, hence a neutron will decay into a proton with the release of an electron and electron antineutrino. 
-   There are many types of fundamental decays, Alpha $\alpha$, Beta plus/minus $\beta^{-}/\beta^{+}$, Gamma, $\gamma$, as well as electron capture and instantaneous fission (\cite{Magill2005}) to name the most understood ones. This report is only concerned with $\beta^{-}$ decay, defined by the following equation,
-    \begin{equation}
-    \ce{^{238}_{92}U} \longrightarrow \ce{^{234}_{90}Th} + \ce{^{4}_{2}\alpha} + \ce{^{0}_{0}\gamma}
+    \ce{^{238}_{92}U} \longrightarrow \ce{^{234}_{90}Th} + \ce{^{4}_{2}\alpha} + \ce{^{0}_{0}\gamma} \longrightarrow \ce{^{234}_{91}Pa} + \ce{^{0}_{-1}\beta^{-}} + \ce{^{0}_{0}\bar{\nu_{e}}}
 \end{equation}
-\begin{equation}
-    \ce{^{234}_{90}Th} \longrightarrow \ce{^{234}_{91}Pa} + \ce{^{0}_{-1}\beta^{-}} + \ce{^{0}_{0}\bar{\nu_{e}}}
-\end{equation}
-   Where U is Uranium, Th is Thorium and Pa is Protactinium. Other particles released include the 3 decays mentioned above, as well as an electron antineutrino, $\ce{^{0}_{0}\bar{\nu_{e}}}$. Protactinium also further decays by $\beta$, however this equation is omitted here (\cite{arazo2016uranium}). 
+where U is Uranium, Th is Thorium and Pa is Protactinium. Other particles released include the 3 decays mentioned above, as well as an electron antineutrino, $\ce{^{0}_{0}\bar{\nu_{e}}}$. Protactinium also further decays by $\beta$, however this equation is omitted here (\cite{arazo2016uranium}). \\
    %This can also be analysed on a quark level, producing the follow quark equation:
 % \newline
 %  \begin{equation} \ce{^{1}_{0}n} \longrightarrow %\ce{^{1}_{1}p} + \ce{^{0}_{-1}e} + \ce{^{0}_{0}%\bar{\nu_{e}}} 
 %  \end{equation}
 %\newline
 %This describes the emission of an electron and how a neutron changes to a proton, taking an element with excess neutrons closer towards stability. This occurs through lots of decays over a large time period. 
-   \\
 % The decay we are studying is the $\beta^{-}$ decay of \ce{^{238}U}. This has an approximate half life of $4 x 10^9$ years REF. Why is this a beta emitter?
-   \\
-   In order to calculate the count rate, which is the rate at which the source decays per time interval (here seconds, $s$), 
+In order to calculate the count rate, which is the rate at which the source decays per time interval (here seconds, $s$), 
   \begin{equation} 
   R = \frac{N}{T} \pm \frac{\sqrt{N}}{T}
    \end{equation}
-   where $R$ is the count rate, $T$ is the total time interval, $N$ is the total counts. This follows fairly intuitively from the definition. 
-    % poisson
-    The Poisson distribution will be used to model the data. The defining equation for the distribution is, 
+where $R$ is the count rate, $T$ is the total time interval, $N$ is the total counts. This follows fairly intuitively from the definition. \\
+The Poisson distribution will be used to model the data. The defining equation for the distribution is, 
     \begin{equation}
         P(N) = \frac{e^{-m}m^{n}}{N!}
     \end{equation}
-    Where $P$ is the probability of obtaining $N$ counts, and $m$ is the mean. Notice the factorial in the definition, indicating that an integer input must be used throughout as the distribution is discrete. 
+where $P$ is the probability of obtaining $N$ counts, and $m$ is the mean. Notice the factorial in the definition, indicating that an integer input must be used throughout as the distribution is discrete. \\
     As the radioactive decay is a random variable distribution, the mean, $m$ and standard deviation $\sigma$ are defined by,
     \begin{equation}
         \sigma = \sqrt{m}
     \end{equation}
-    This will be used to compare against the mean of the raw data according to the histogram. This is computed as the mean of the whole data array. 
-     \newline 
+This will be used to compare against the mean of the raw data according to the histogram. This is computed as the mean of the whole data array. 
     \section{Experimental exploration of the random nature of radioactive decay}
-
-
    % \centering
    % \scalebox{0.5}
-    \begin{figure}[ht]
+\begin{figure}[h]
         \begin{center}
             \def\svgwidth{\columnwidth}
-            \includesvg[height=8.0cm]{final_diag.svg}
+            \includesvg[height=7.0cm]{final_diag.svg}
              \caption{A diagram of the experimental setup, in which a U-238 source is placed with tweezers on blue holding tray, set at distance d from the Geiger-Müller tube. This is connected to the shielded housing in order to ensure the distance d and angle relative to the source are held constant. This tube is connected to an electronic counter, used here to take  100 three second readings of counts from the $\beta$ decay of the source.}
              \label{fig:experimental setup}
         \end{center}
     \end{figure}
+\noindent Before taking readings of the radioactive source, any present background radiation had to be considered. Though the source was placed in a somewhat shielded housing (see Figure 1), sources of background radiation are present everywhere and so a flat background count rate is first established before introducing more potent sources. To do this, the source was kept in a lead lined storage container, at a significant distance from a Geiger-Müller tube, connected normal to a shielded housing that will hold the source. This detector is then connected to an electric counter, responsible for counting the number of electric pulses received in a set time interval.
 
-    Before taking readings of the radioactive source, any present background radiation had to be considered. Though the source was placed in a somewhat shielded housing (see Figure 1), sources of background radiation are present everywhere and so a flat background count rate is first established before introducing more potent sources. To do this, the source was kept in a lead lined storage container, at a significant distance from a Geiger-Müller tube, connected normal to a shielded housing that will hold the source. This detector is then connected to an electric counter, responsible for counting the number of electric pulses received in a set time interval. To measure the background count, the number of decayed nuclei was measured in an interval of 100 seconds. The background activity, or counts per second in Bequerel (Bq), could then be calculated using the relationship given in Equation 6. The time interval of 100 seconds was chosen as it is significantly larger than the interval used to investigate random decay from the source, as well as being a convenient number for calculation purposes.  \newline
-    In order to test the random fluctuations, the \ce{^{238}U} source was carefully placed at a distance from the Geiger-Müller tube such that the count rate would be $<$10 for any three second interval. This ensures the conditions for a Poisson model are best met, namely that events are "rare" within the time interval, in effect ensuring they are discrete and countable, as well as each decay being independent. In testing this was roughly 8cm. As the probability for larger count rates falls quickly towards zero for increasing distances, and the Poisson conditions must be valid for the model to produce a good fit, this distance was not varied much. If the Poisson fit poorly this could be further investigated.  \\
-    The count rate in three-second intervals was then measured 100 times, ensuring the timer and counter was reset each measurement and the source was kept at uniform distance and angle from the detector. This was achieved by placing the source on one of the adjustable shelves in the protective housing, which ensured the source was shielded when working with it for longer time periods, as well as providing a stand for the Geiger-Müller tube to ensure this did not move. The raw data was collected and processed accordingly by computer software. This data was collected all at once, ensuring minimal environment changes.
+\noindent To measure the background count, the number of decayed nuclei was measured in an interval of 100 seconds. The background activity, or counts per second in Bequerel (Bq), could then be calculated using the relationship given in Equation 3. The time interval of 100 seconds was chosen as it is significantly larger than the interval used to investigate random decay from the source, as well as being a convenient number for calculation purposes.
+
+\noindent In order to test the random fluctuations, the \ce{^{238}U} source was carefully placed at a distance from the Geiger-Müller tube such that the count rate would be $<$10 for any three second interval. This ensures the conditions for a Poisson model are best met, namely that events are "rare" within the time interval, in effect ensuring they are discrete and countable, as well as each decay being independent. In testing this was roughly 8cm. As the probability for larger count rates falls quickly towards zero for increasing distances, and the Poisson conditions must be valid for the model to produce a good fit, this distance was not varied much. If the Poisson fit poorly this could be further investigated.
+
+\noindent The count rate in three-second intervals was then measured 100 times, ensuring the timer and counter was reset each measurement and the source was kept at uniform distance and angle from the detector. This was achieved by placing the source on one of the adjustable shelves in the protective housing, which ensured the source was shielded when working with it for longer time periods, as well as providing a stand for the Geiger-Müller tube to ensure this did not move. The raw data was collected and processed accordingly by computer software. This data was collected all at once, ensuring minimal environment changes.
 \section{Analysis of decay parameters and fitting the statistical model}
-The data was plotted on a histogram (Fig. 3) with integer bins, and error bars calculated based on the square root of the individual bin frequencies as this is the error in random variables.  The overall shape is positively skewed around a mean approximated to be between 3 and 4.\\
+The data was plotted on a histogram (Fig. 3) with integer bins, and error bars calculated based on the square root of the individual bin frequencies as this is the error in random variables.  The overall shape is positively skewed around a mean approximated to be between 3 and 4.
 
-To further analyse the data, the software calculated the mean of the data, $3.25$, and standard deviation, $\sigma_{data} = 1.71 $ (3 sf.)
+\noindent To further analyse the data, the software calculated the mean of the data, $3.25$, and standard deviation, $\sigma_{data} = 1.71 $ (3 sf.)
 The mean of the histogram was also considered, where the bin centers are considered instead of the integer values. This gave us a slightly different standard deviation, $\sigma_{hist} = 1.94$ (3 sf.). 
-Following this, Python and packages NumPy and SciPy were used to create a suitable Poisson fit to the data. Two different methods were explored, SciPy's Curve fit and Stats fit. 
-Figure 2 shows the overlaid Poisson curve from Stats fit on top of the histogram. The histogram has been adjusted with bin centres as the integers associated with each reading, rather than the convention of a bin starting and ending at each integer. This was a necessary compromise due to the Poisson equation (Equation 7) requiring integer inputs, and the curve was fit to the centres of the bins, in order to better approximate the distribution shape. The curve was also smoothed using a basic Spline function, in order to qualitatively evaluate the overall fit better, under the understanding this creates a continuous curve from a discrete distribution.
-The curve fit function generated a suggested mean, and from this a standard deviation (using Equation 4) $\sigma_{Po.1} = 1.62$ (3 sf.). The Stats fit function similarly generated a standard deviation $\sigma_{Po.2} = 1.80 $ (3 sf.). Both functions took a Poisson function as the fit function, and Curve fit requested a guess for mean (3.25 was used) while Stats fit asked for bounds for the mean, where $[3,4]$ was given. See the appendix for further details. It was suggested there may have been some error in the Curve fit procedure as this was significantly shifted, going through none of the error bars so this was not used in the results. 
-Additionally, the count rate was also calculated (Equation 4), to be $R = 1.08 \pm 0.06  Bq$ (3 sf.), with a background rate of $0.160 Bq$ (3 sf.). From this, it can be inferred 15 percent of the counts may be associated with background radiation and, as such this is a source of random error in the Poisson fit.
+
+\noindent Following this, Python and packages NumPy and SciPy were used to create a suitable Poisson fit to the data. Two different methods were explored, SciPy's Curve fit and Stats fit. 
+Figure 2 shows the overlaid Poisson curve from Stats fit on top of the histogram. The histogram has been adjusted with bin centres as the integers associated with each reading, rather than the convention of a bin starting and ending at each integer. This was a necessary compromise due to the Poisson equation (Equation 4) requiring integer inputs, and the curve was fit to the centres of the bins, in order to better approximate the distribution shape. The curve was also smoothed using a basic Spline function, in order to qualitatively evaluate the overall fit better, under the understanding this creates a continuous curve from a discrete distribution.
+
+\noindent The curve fit function generated a suggested mean, and from this a standard deviation (using Equation 5) $\sigma_{Po.1} = 1.62$ (3 sf.). The Stats fit function similarly generated a standard deviation $\sigma_{Po.2} = 1.80 $ (3 sf.). Both functions took a Poisson function as the fit function, and Curve fit requested a guess for mean (3.25 was used) while Stats fit asked for bounds for the mean, where $[3,4]$ was given. See the appendix for further details. It was suggested there may have been some error in the Curve fit procedure as this was significantly shifted, going through none of the error bars so this was not used in the results. 
+
+\noindent Additionally, the count rate was also calculated (Equation 3), to be $R = 1.08 \pm 0.06  Bq$ (3 sf.), with a background rate of $0.160 Bq$ (3 sf.). From this, it can be inferred 15 percent of the counts may be associated with background radiation and, as such this is a source of random error in the Poisson fit.
 A Goodness of Fit test for the Stats fit Poisson curve generated $p = 0.820$ (3 sf.), which indicates the curve is a good fit to the data (see Appendix for full test). This confirms the hypothesis that a Poisson would be a good model for random radioactive decay. 
-%variation, errors and improvements
-The variation between $\sigma_{Po.2}$ and $\sigma_{data}$ is likely explained by the background radiation as well as the inherent randomness in radioactive decay. The experimental data was within five percent of the model, whereas the background count suggested it could be up to 15 percent of the total counts inferring the variation in the model is fully explained by either background count or random fluctuations. Taking 100 data readings yielded an error of roughly $\sqrt{N} = 10$ percent is observed, therefore testing with larger data sets would likely reduce some of this error.  
-       \begin{figure}[]
+
+\noindent The variation between $\sigma_{Po.2}$ and $\sigma_{data}$ is likely explained by the background radiation as well as the inherent randomness in radioactive decay. The experimental data was within five percent of the model, whereas the background count suggested it could be up to 15 percent of the total counts inferring the variation in the model is fully explained by either background count or random fluctuations. Taking 100 data readings yielded an error of roughly $\sqrt{N} = 10$ percent is observed, therefore testing with larger data sets would likely reduce some of this error.  
+\begin{figure}[h]
         \begin{center}
             \def\svgwidth{\columnwidth}
             \includesvg[height=8.0cm]{histogram_new.svg}
@@ -127,18 +121,18 @@ The variation between $\sigma_{Po.2}$ and $\sigma_{data}$ is likely explained by
     %discussion of the results in context with future work
     \section{Conclusions}
 The aim of the experiment was to investigate whether radioactive decay could be modelled by a random discrete distribution, such as Poisson. This was achieved through taking readings for background radiation, followed by 100 three-second intervals for which the count was observed. This data was plotted on a histogram and a Poisson curve was fit over it in Python. Here it was shown $\sigma_{data} = 1.71$ and $\sigma_{Po.2} = 1.80$ (3 sf.). The variation in these is due to the background count, as well as the random variation present. This would be minimised through increased testing. The Poisson curve was also deemed a good fit for the data through a $\chi^{2}$ Goodness of Fit test. Therefore it is  concluded the decay can be modelled by a discrete random variable and the use of a Poisson distribution is suitable to model this data graphically.
-This result is important as it helps increase understanding of the nature of radioactive decay, especially its behaviour in smaller time intervals where it can be easily analysed. More generally, it outlines the general procedure for choosing and fitting a model to some data, whilst demonstrating the compromises and adjustments required to do this. The results were limited by the amount of data collected, and this could be further investigated with a large data set, to see if the relationship holds for large counts. 
+
+\noindent This result is important as it helps increase understanding of the nature of radioactive decay, especially its behaviour in smaller time intervals where it can be easily analysed. More generally, it outlines the general procedure for choosing and fitting a model to some data, whilst demonstrating the compromises and adjustments required to do this. The results were limited by the amount of data collected, and this could be further investigated with a large data set, to see if the relationship holds for large counts. 
 % discuss further research!!!
 *discussion of further research?*
     \section{References}
 \bibliographystyle{plain} % We choose the "plain" reference style
 \bibliography{refs} % Entries are in the refs.bib file
-
     \section{Appendices}
     Calculating $R$, $$ R = \frac{N}{T} \pm \frac{\sqrt{N}}{T}$$
   Where $R$ is the count rate, $T$ is the total time interval and $N$ is the total counts. With values $N =( 32.5 \pm 2) * 10^{1}$, $T= 3 * 100 [s]$, gives 
   $$R = 0.92 \pm 0.06  Bq$$ 
-    \begin{table}[b]
+    \begin{table}[h]
         \centering
         \begin{tabular}{|c|c|}
         \hline
@@ -153,7 +147,6 @@ This result is important as it helps increase understanding of the nature of rad
            6  & 6\\
            7  & 4 \\
            8  & 1 \\
-           
            \hline
         \end{tabular}
         \caption{Binned data}
@@ -161,7 +154,7 @@ This result is important as it helps increase understanding of the nature of rad
     \end{table}
     Poisson values 
     $N = 60$, and $x$ is the counts in 100s. 
-    \begin{table}[]
+    \begin{table}[h]
         \centering
         \begin{tabular}{|c|c|c|c|}
          \hline
@@ -177,13 +170,12 @@ This result is important as it helps increase understanding of the nature of rad
             7 & 0.02946428 & 2.946428 & 4\\
             8 & 0.01196986 & 1.1996986 & 1\\
              \hline
-
         \end{tabular}
         \caption{Raw Poisson data for GoF}
         \label{tab:my_label}
     \end{table}
     Following this, we combine frequencies less than 4 as they are too small for GoF. 
-    \begin{table}[]
+    \begin{table}[h]
         \centering
         \begin{tabular}{|c|c|c|c|c|}
          \hline
